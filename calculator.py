@@ -1,32 +1,40 @@
-from flask import Flask, render_template, request
+def calculator():
+    while True:
+        # Print options for the user
+        print("Enter '+' to add two numbers")
+        print("Enter '-' to subtract two numbers")
+        print("Enter '*' to multiply two numbers")
+        print("Enter '/' to divide two numbers")
+        print("Enter 'quit' to end the program")
+     
+        user_input = input(": ")
 
-app = Flask(__name__)
+        if user_input == "quit":
+            break
+    
+        elif user_input in ["+", "-", "*", "/"]:
 
+            num1 = float(input("Enter a number: "))
 
-@app.route('/')
-def welcome():
-    return render_template('form.html')
+            num2 = float(input("Enter another number: "))
 
-@app.route('/', methods=['POST'])
-def result():
-    var_1 = request.form.get("var_1", type=int, default=0)
-    var_2 = request.form.get("var_2", type=int, default=0)
-    operation = request.form.get("operation")
-    if(operation == 'Addition'):
-        result = var_1 + var_2
-    elif(operation == 'Subtraction'):
-        result = var_1 - var_2
-    elif(operation == 'Multiplication'):
-        result = var_1 * var_2
-    elif(operation == 'Division'):
-        if var_1 == 0 and var_2 == 0:
-            result = 0
+            if user_input == "+":
+                result = num1 + num2
+                print(num1, "+", num2, "=", result)
+
+            elif user_input == "-":
+                result = num1 - num2
+                print(num1, "-", num2, "=", result)
+
+            elif user_input == "*":
+                result = num1 * num2
+                print(num1, "*", num2, "=", result)
+
+            elif user_input == "/":
+                result = num1 / num2
+                print(num1, "/", num2, "=", result)
         else:
-            result = var_1 / var_2
-    else:
-        result = 0
-    entry = result
-    return render_template('form.html', entry=entry)
 
-if __name__ == '__main__':
-    app.run(debug=True)
+            print("Invalid Input")
+
+calculator()
