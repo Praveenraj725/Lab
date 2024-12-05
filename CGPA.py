@@ -1,36 +1,34 @@
 
 def cgpaCalculator():
-	
-	TotalScoreOfferable = 0
+	TotalScore= 0
 
 	obtainedGrade = 0
 
-	
 	numberOfCourses = int(input("Please Enter the number of Courses you Offered: "))
 	
 	for x in range(numberOfCourses):
 		Course1 = input("Enter The Course code of the  course you took:")
-		unit = int(input ("How many Unit is the Course you took: "))
-		score = int(input("Please Enter your Score:"))
+		gradepoint = int(input ("credit of the course: "))
+		score = int(input("Please Enter your Score: "))
 		
-		TotalScoreOfferable += unit* 5
-		if (score >= 70):
-			grade = 5
+		TotalScore += gradepoint* 5
+		if (score >= 90):
+			grade = 10
+		elif(score < 90 and  score >= 80):
+			grade = 9 
+		elif(score < 80 and  score >= 70 ):
+			grade = 8
 		elif(score < 70 and  score >= 60):
-			grade = 4 
-		elif(score < 60 and  score >= 50 ):
-			grade = 3
-		elif(score < 50 and  score >=45):
-			grade = 2
-		elif (score < 45 and  score>=40):
-			grade = 1
+			grade = 7
+		elif (score < 60 and  score>= 50):
+			grade = 6
 		else :
 			grade = 0 
 
 
-		obtainedGrade += unit*grade
+		obtainedGrade += gradepoint*grade
 
-	Cgpa =float((obtainedGrade / TotalScoreOfferable) * 5)
+	Cgpa =float((obtainedGrade / TotalScore) * 5)
 	print("THANKS FOR ALL YOUR INPUT YOUR CGPA IS : " + str(Cgpa))
 
 

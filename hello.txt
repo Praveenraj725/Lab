@@ -1,3 +1,15 @@
 hello 
 
+hadoop:
 https://phoenixnap.com/kb/install-hadoop-ubuntu#ftoc-heading-14
+
+Aneka:
+https://www.manjrasoft.com/manjrasoft_downloads.html
+
+All ex:
+https://github.com/Sadha07/cclab
+
+calculator:
+https://github.com/ashutoshpipriye/Calculator-using-Flask
+
+
